@@ -19,13 +19,6 @@ public class Main {
 
             answer = checkAnswer(keyboard);
             round = checkRound(keyboard);
-            score = checkScore(keyboard);
-
-            final String[] verb = {"rock", "paper", "scissors"};
-            Random random = new Random();
-            int index = random.nextInt(verb.length);
-            System.out.println(verb[index]);
-        }
             player = 0;
             player2 = 0;
             yes = 4;
@@ -33,43 +26,37 @@ public class Main {
 
 
             rock = 1;
-        paper = 2;
-        scissors = 3;
-        score = 0;
-
-        if (rock > scissors){
-            System.out.println(" Rock beats Scissors, player gets one point ");
-            System.out.println("score: "+ score ++);
-        }
-        if (rock > scissors){
-            System.out.println("Rock beats Scissors, player2 gets one point");
-            System.out.println("score: "+ score ++);
-        }
-        if(scissors > paper){
-            System.out.println(" Scissors beats paper, Winner gets one point ");
-            System.out.println("score: "+ score ++);
-        }
-        if(paper > rock){
-            System.out.println(" Paper beats Rock, Winner gets one point");
-            System.out.println("score: "+ score ++);
-        }
-        if(rock == rock){
-            System.out.println(" No one gets a point ");
-            System.out.println("score: "+ score ++);
-        }
-        if(scissors == scissors){
-            System.out.println(" No one gets a point ");
-            System.out.println("score: "+ score ++);
-        }
-        if(paper == paper){
-            System.out.println(" No one gets a point ");
-            System.out.println("score: "+ score ++);
+            paper = 2;
+            scissors = 3;
+            score = 1;
 
 
 
+            final String[] verb = {"rock", "paper", "scissors"};
+            Random random = new Random();
+            int index = random.nextInt(verb.length);
+            System.out.println(verb[index]);
+
+            switch (score){
+
+                case 1:
+                    System.out.println(rock > scissors);
+                    System.out.println("score:  Player: 0 Player2: "+ score );
+                    System.out.println("You Win");
+                    break;
+                case 2:
+                    System.out.println(scissors > paper);
+                    System.out.println("score: "+ score );
+                    System.out.println("You Win");
+                    break;
+                case 3:
+                    System.out.println(paper > rock);
+                    System.out.println("score: "+ score );
+                    System.out.println("You Win");
+                    break;
+            }
+
         }
-
-
 
     }
 
@@ -101,18 +88,10 @@ public class Main {
         return round;
     }
 
-    public static int checkScore(Scanner keyboard){
-        int score;
-        score = 0;
-        boolean wrongScore = true;
-        while (wrongScore){
 
-            System.out.println("Score: Player: 0 player2: "+ score++);
-            score = keyboard.nextInt();
-            if (score < 0);
-            wrongScore = false;
-        }
-        return score;
+
+
+
     }
 
     /*public static int checkWords(Scanner keyboard){
@@ -126,6 +105,6 @@ public class Main {
     }*/
 
 
-}
+
 
 
